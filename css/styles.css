@@ -1,27 +1,16 @@
-:root {
---primary-color: #157cd1;
---red: #e31010;
---secondary-color: #000;
---visited-color: #a61fcc;
---white: #fff;
---gray: rgba(0, 0, 0, 0.3);
---dark-gray: #575654;
---light-gray: #c7c7c7;
---light-orange: #f57f25;
---dark-orange: #ff490d;
-}
-
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.26, autoprefixer: v9.7.3) */
 
 * {
-	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 body {
-	background-color: var(--secondary-color);
+	background-color: #000;
 	font-family: 'Gotu', sans-serif;
 	line-height: 40px;
 	font-weight: 400;
-	color: var(--red);
+	color: #e31010;
 }
 
 .profile {
@@ -36,6 +25,10 @@ h1 {
 	margin: 0 auto;
 	text-align: center;
 	line-height: 40px;
+}
+
+#my-work {
+	margin-bottom: 5%;
 }
 
 h3 {
@@ -71,12 +64,12 @@ p {
 }
 
 a {
-	color: var(--primary-color);
+	color: #157cd1;
 }
 
 a:visited {
 	/* Visited Link */
-	color: var(--visited-color);
+	color: #a61fcc;
 }
 
 a:hover, a:focus {
@@ -86,22 +79,42 @@ a:hover, a:focus {
 
 a:active {
 	/* Selected Link */
-	color: var(--red);
+	color: #e31010;
 }
 
-button, .button {
+button {
 	/* overwrites browser defaults and resets the border */
 	border: none;
 	display: inline-block;
 	/* takes the font from the outer container */
 	font-family: inherit;
-	background-color: var(--primary-color);
+	background-color: #157cd1;
 	font-size: 16px;
-	color: var(--white);
+	color: #fff;
 	text-decoration: none;
 	padding: 10px;
 	border-radius: 3px;
-	border-bottom: 2px solid var(--gray);
+	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+	-webkit-transition: 0.2s opacity;
+	-o-transition: 0.2s opacity;
+	transition: 0.2s opacity;
+}
+
+.button {
+	/* overwrites browser defaults and resets the border */
+	border: none;
+	display: inline-block;
+	/* takes the font from the outer container */
+	font-family: inherit;
+	background-color: #157cd1;
+	font-size: 16px;
+	color: #fff;
+	text-decoration: none;
+	padding: 10px;
+	border-radius: 3px;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+	-webkit-transition: 0.2s opacity;
+	-o-transition: 0.2s opacity;
 	transition: 0.2s opacity;
 }
 
@@ -156,35 +169,46 @@ button:hover, button:focus, .button:hover, .button:focus, .navigation-list__item
 	height:200px;
 	margin-right: 40px;
 	border-radius: 50%;
-	border: 5px solid var(--primary-color);
+	border: 5px solid #157cd1;
 }
 
 .page-footer {
 	clear: both;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 	text-align: center;
 	position: static;
 	margin-top: 160px;
-	border-top: 3px groove var(--primary-color);
+	border-top: 3px groove #157cd1;
 }
 
 .page-header {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
 	padding: 20px;
 	margin: 0 auto;
 	margin-bottom: 100px;
-	background-color: var(--dark-gray);
-	border-bottom: 3px groove var(--primary-color);
+	background-color: #575654;
+	border-bottom: 3px groove #157cd1;
 }
 
 .page-header__item {
-	flex: 0 1 200px;
+	-webkit-box-flex: 0;
+	    -ms-flex: 0 1 200px;
+	        flex: 0 1 200px;
 }
 
 .page-header__item:last-child {
-	flex-grow: 1;
+	-webkit-box-flex: 1;
+	    -ms-flex-positive: 1;
+	        flex-grow: 1;
 	text-align: right;
 }
 
@@ -197,30 +221,37 @@ button:hover, button:focus, .button:hover, .button:focus, .navigation-list__item
 /* Styling CSS grid */
 
 .grid {
+	display: -ms-grid;
 	display: grid;
+	-ms-grid-columns: 1fr 5% 1fr;
 	grid-template-columns: 1fr 1fr;
-	grid-gap: 20%;
+	grid-gap: 5%;
 }
 
 .grid__item {
-	background-color: var(--light-gray);
-	width: auto;
+	background-color: #c7c7c7;
+	width: 75%;
 	text-align: center;
 	padding: 10px;
 	margin: 0 auto;
-	border: 3px groove var(--red);
+	border: 3px groove #e31010;
 }
 
 .grid__item:last-child {
+	-ms-grid-column: 2;
 	grid-column: 2 / 2;
+	-ms-grid-row: 1;
+	-ms-grid-row-span: 1;
 	grid-row: 1 / 2;
 }
 
 #main-logo {
-	border: 1px groove var(--red);
+	border: 1px groove #e31010;
 	padding: 10px 5px 5px 5px;
 	margin-top: 1px;
-	border-radius: 35%;	
+	border-radius: 35%;
+	width: 125px;
+	height: 50px;	
 }
 
 #experience {
@@ -234,30 +265,49 @@ button:hover, button:focus, .button:hover, .button:focus, .navigation-list__item
 	width: 35%;
 	height: auto;
 	margin: 0 auto;
-	border: 2px ridge var(--primary-color);
+	border: 2px ridge #157cd1;
 	text-align: center;
+}
+
+@-webkit-keyframes color-change {
+	0% {
+		fill: #000;
+	}
+	25% {
+		fill: #f57f25;
+	}
+	50% {
+		fill: #157cd1;
+	}
+	75% {
+		fill: #ff490d;
+	}
+	100% {
+		fill: #000;
+	}
 }
 
 @keyframes color-change {
 	0% {
-		fill: var(--secondary-color);
+		fill: #000;
 	}
 	25% {
-		fill: var(--light-orange);
+		fill: #f57f25;
 	}
 	50% {
-		fill: var(--primary-color);
+		fill: #157cd1;
 	}
 	75% {
-		fill: var(--dark-orange);
+		fill: #ff490d;
 	}
 	100% {
-		fill: var(--secondary-color);
+		fill: #000;
 	}
 }
 
  .st2, .st3 {
-	animation: 5s color-change infinite linear;
+	-webkit-animation: 5s color-change infinite linear;
+	        animation: 5s color-change infinite linear;
 }
 
 @media all and (max-width: 750px) {
@@ -275,12 +325,14 @@ button:hover, button:focus, .button:hover, .button:focus, .navigation-list__item
 
 @media all and (min-width: 500px) and (max-width: 750px) {
 	.grid {
+		-ms-grid-columns: 1fr 10px 1fr;
 		grid-template-columns: 1fr 1fr;
 	}
 }
 
 @media all and (max-width: 500px) {
 	.grid {
+		-ms-grid-columns: 1fr;
 		grid-template-columns: 1fr;
 	}
 }
