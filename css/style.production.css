@@ -235,6 +235,7 @@ button:hover, button:focus, .button:hover, .button:focus, .navigation-list__item
 	padding: 10px;
 	margin: 0 auto;
 	border: 3px groove #e31010;
+	border-radius: 10px;
 }
 
 .grid__item:last-child {
@@ -243,6 +244,10 @@ button:hover, button:focus, .button:hover, .button:focus, .navigation-list__item
 	-ms-grid-row: 1;
 	-ms-grid-row-span: 1;
 	grid-row: 1 / 2;
+}
+
+.app-img {
+	width: 100%;
 }
 
 #main-logo {
